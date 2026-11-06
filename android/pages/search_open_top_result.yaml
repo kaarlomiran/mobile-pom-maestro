@@ -1,0 +1,5 @@
+# Page: Search. Action: open the first listed article. Ends on the article page.
+# Input: RESULT_DESCRIPTION (regex of the result's description line)
+appId: ${APP_ID}
+---
+- tapOn: ${RESULT_DESCRIPTION}

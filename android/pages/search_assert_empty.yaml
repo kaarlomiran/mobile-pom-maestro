@@ -1,0 +1,5 @@
+# Page: Search. Assertion: query box is empty (hint shown) and no result descriptions remain.
+appId: ${APP_ID}
+---
+- assertVisible: "Search Wikipedia"
+- assertNotVisible: "No results"

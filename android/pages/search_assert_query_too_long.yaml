@@ -1,0 +1,10 @@
+# Page: Search. Assertion: over-limit query is rejected with the max-length error and a way back.
+# Input: ACTUAL (length typed). The app's documented limit is 300 characters.
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: "Search request is longer than the maximum allowed length.*"
+    timeout: 15000
+- assertVisible: ".*Actual: ${ACTUAL}; allowed: 300.*"
+- assertVisible: "Go back"
+- assertNotVisible: "No results"

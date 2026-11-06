@@ -1,0 +1,19 @@
+# Page: Onboarding. Action: get through the intro carousel to the Explore feed.
+# Safe to call when onboarding is not shown (all steps are conditional).
+appId: ${APP_ID}
+---
+- repeat:
+    times: 4
+    commands:
+      - runFlow:
+          when:
+            visible: "Forward"
+          commands:
+            - tapOn: "Forward"
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      - tapOn: "Skip"
+- assertVisible:
+    id: "org.wikipedia:id/nav_tab_home"

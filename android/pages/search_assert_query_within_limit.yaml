@@ -1,0 +1,7 @@
+# Page: Search. Assertion: no max-length error is shown (query accepted by the app).
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: "No results"
+    timeout: 20000
+- assertNotVisible: "Search request is longer than the maximum allowed length.*"

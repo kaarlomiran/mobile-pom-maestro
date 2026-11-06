@@ -1,0 +1,7 @@
+# Page: Search. Assertion: the search box holds exactly QUERY.
+# Input: QUERY
+appId: ${APP_ID}
+---
+- assertVisible:
+    id: "org.wikipedia:id/search_src_text"
+    text: ${QUERY}

@@ -1,0 +1,6 @@
+# Page: Search. Action: append text to the current query without clearing it.
+# Input: APPEND (string)
+appId: ${APP_ID}
+---
+- inputText: ${APPEND}
+- waitForAnimationToEnd

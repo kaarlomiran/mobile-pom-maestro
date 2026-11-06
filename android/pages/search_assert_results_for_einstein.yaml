@@ -1,0 +1,8 @@
+# Page: Search. Assertion: the top result for "Albert Einstein" (title + description) is listed.
+# Content is live; the description is stable but may change upstream - update here only.
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: "German-born theoretical physicist.*"
+    timeout: 15000
+- assertVisible: "Albert Einstein"

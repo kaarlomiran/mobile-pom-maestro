@@ -1,0 +1,8 @@
+# Page: Search. Assertion: a result list is shown (not the empty state).
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible:
+      id: "org.wikipedia:id/fragment_search_results"
+    timeout: 15000
+- assertNotVisible: "No results"

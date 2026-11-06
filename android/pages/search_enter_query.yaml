@@ -1,0 +1,7 @@
+# Page: Search. Action: replace the search box contents with QUERY.
+# Input: QUERY (string)
+appId: ${APP_ID}
+---
+- eraseText: 400
+- inputText: ${QUERY}
+- waitForAnimationToEnd
