@@ -1,0 +1,7 @@
+# Page: Search. Action: switch the search language tab.
+# Input: TAB_LABEL (upper-case label as shown, e.g. ESPAÑOL)
+appId: ${APP_ID}
+---
+- assertVisible: ${TAB_LABEL}
+- tapOn: ${TAB_LABEL}
+- waitForAnimationToEnd

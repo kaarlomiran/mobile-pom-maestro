@@ -1,0 +1,9 @@
+# Page: Article. Assertion: an article page is rendered (toolbar actions + tagline).
+# Input: TAGLINE (regex of the article's short description)
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: ${TAGLINE}
+    timeout: 20000
+- assertVisible: "Find in article"
+- assertVisible: "Save"

@@ -1,0 +1,5 @@
+# Page: Search. Assertion: app did not crash and the search field is still on screen.
+appId: ${APP_ID}
+---
+- assertVisible:
+    id: "org.wikipedia:id/search_src_text"

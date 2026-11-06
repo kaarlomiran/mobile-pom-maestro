@@ -1,0 +1,6 @@
+# Any page. Assertion: no Android crash / ANR dialog and the app is still in the foreground.
+appId: ${APP_ID}
+---
+- assertNotVisible: ".*(keeps stopping|has stopped|isn't responding|not responding).*"
+- assertVisible:
+    id: "org.wikipedia:id/action_bar_root"

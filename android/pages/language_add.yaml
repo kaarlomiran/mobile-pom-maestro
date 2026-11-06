@@ -1,0 +1,17 @@
+# Page: Wikipedia languages (reached from the search screen language button).
+# Action: add a language to "Your languages" and return to Search.
+# Input: LANGUAGE (display name as listed in "Add a language", e.g. Español)
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "org.wikipedia:id/search_lang_button"
+- assertVisible: "Wikipedia languages"
+- assertVisible: "Your languages"
+- tapOn: "Add language"
+- assertVisible: "Add a language"
+- tapOn: ${LANGUAGE}
+- assertVisible: "Your languages"
+- assertVisible: ${LANGUAGE}                  # new language is now listed
+- tapOn: "Navigate up"
+- assertVisible:
+    id: "org.wikipedia:id/search_src_text"

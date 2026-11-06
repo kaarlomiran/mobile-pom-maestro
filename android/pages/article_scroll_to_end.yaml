@@ -1,0 +1,10 @@
+# Page: Article. Action: scroll to the very bottom of the article and confirm the footer.
+appId: ${APP_ID}
+---
+- scrollUntilVisible:
+    element: "Content is available under.*"
+    direction: DOWN
+    timeout: 180000
+    speed: 95
+- assertVisible: "Content is available under.*"
+- assertVisible: "View article in browser"

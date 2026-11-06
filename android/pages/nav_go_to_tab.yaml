@@ -1,0 +1,7 @@
+# Page: Bottom navigation. Action: switch tab.
+# Input: TAB_ID one of nav_tab_home, nav_tab_reading_lists, nav_tab_search, nav_tab_edits, nav_tab_more
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "org.wikipedia:id/${TAB_ID}"
+- waitForAnimationToEnd

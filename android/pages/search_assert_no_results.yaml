@@ -1,0 +1,6 @@
+# Page: Search. Assertion: the empty-result state is shown.
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: "No results"
+    timeout: 15000
