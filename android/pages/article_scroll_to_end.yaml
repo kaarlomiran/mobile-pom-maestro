@@ -1,10 +1,52 @@
-# Page: Article. Action: scroll to the very bottom of the article and confirm the footer.
+# Page: Article. Action: scroll to the bottom of a long article and confirm the footer.
+# Strategy (each Maestro swipe costs ~7 s on emulators, so 100 swipes is not viable):
+#   1. a few swipes prove manual scrolling works (native toolbar collapses),
+#   2. jump to the last section through "Contents" (a real user path), 3. swipe the final stretch to the footer.
+# Note: on Android 17 the whole WebView article is in the accessibility tree even when off-screen (cycle 04), so
+# visibility of article content cannot prove scrolling; the collapsing toolbar is the reliable on-screen signal.
+# Limitation: the footer asserts below pass on Android 17 even off-screen (tree issue); the end-of-test screenshot is
+# the human-reviewable evidence that the footer is really on screen.
+# Input: LAST_SECTION (text of the last entry in Contents, e.g. "External links")
 appId: ${APP_ID}
 ---
-- scrollUntilVisible:
-    element: "Content is available under.*"
-    direction: DOWN
-    timeout: 180000
-    speed: 95
+- assertVisible: "Search Wikipedia"                 # toolbar visible at the top of the page
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          start: 50%, 78%
+          end: 50%, 22%
+          duration: 150
+- assertNotVisible: "Search Wikipedia"              # toolbar collapsed => the page really scrolled
+- tapOn: "Contents"
+- assertVisible:
+    id: "org.wikipedia:id/toc_list"                 # native Contents panel is open
+- repeat:                                           # scroll the Contents list itself: swiping FROM the list works on phones
+    while:                                          # (panel) and on tablets (side panel next to the article)
+      notVisible:
+        id: "org.wikipedia:id/page_toc_item_text"
+        text: ${LAST_SECTION}
+    times: 20
+    commands:
+      - swipe:
+          from:
+            id: "org.wikipedia:id/toc_list"
+          direction: UP
+          duration: 300
+- assertVisible:
+    id: "org.wikipedia:id/page_toc_item_text"       # last section found in the native list
+    text: ${LAST_SECTION}
+- tapOn:
+    id: "org.wikipedia:id/page_toc_item_text"       # native entry, NOT the same-named heading inside the WebView
+    text: ${LAST_SECTION}
+- assertNotVisible:
+    id: "org.wikipedia:id/toc_list"                 # panel closed => the jump to the last section happened
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          start: 50%, 78%
+          end: 50%, 22%
+          duration: 150
 - assertVisible: "Content is available under.*"
 - assertVisible: "View article in browser"

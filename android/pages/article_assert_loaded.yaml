@@ -1,9 +1,17 @@
 # Page: Article. Assertion: an article page is rendered (toolbar actions + tagline).
+# Also dismisses first-view coach-marks that overlay the article and block scrolling
+# (seen on Android 17: "Customize your toolbar" -> "Got it").
 # Input: TAGLINE (regex of the article's short description)
 appId: ${APP_ID}
 ---
 - extendedWaitUntil:
     visible: ${TAGLINE}
     timeout: 20000
+- runFlow:
+    when:
+      visible: "Got it"
+    commands:
+      - tapOn: "Got it"
+- assertNotVisible: "Customize your toolbar"
 - assertVisible: "Find in article"
 - assertVisible: "Save"
