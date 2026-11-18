@@ -3,3 +3,10 @@
 appId: ${APP_ID}
 ---
 - tapOn: ${RESULT_DESCRIPTION}
+# Recovery: on slow emulators (seen on Android 12) the tap can register as a long-press and open the
+# context menu (Open / Open in new tab / Save ...) instead of the article. Choose "Open" in that case.
+- runFlow:
+    when:
+      visible: "Open in new tab"
+    commands:
+      - tapOn: "Open"
