@@ -22,10 +22,10 @@ appId: ${APP_ID}
     id: "App Onboarding Skip Button"
 - waitForAnimationToEnd:
     timeout: 5000
-# WORKAROUND (Maestro 2.12.1, iOS 26.5 and 27.2): after the onboarding sheet closes, the SAME driver session keeps
-# returning an empty screen (waited 150 s), while a new session or a relaunch sees Home. Backgrounding alone does not
-# help. Killing the app right after Skip can lose the "onboarding done" state (run cycle-02, TC04/TC05), so first
-# send it to the background (lets it save), then stop and relaunch.
+# WORKAROUND (Maestro 2.12.1, iOS 26.5 and 27.2): right after the onboarding sheet closes, the same driver session
+# reports the tab bar WITHOUT its "Root Tab ..." ids (Home itself is visible); a new session or a relaunch reports them.
+# Cause not determined. Killing the app right after Skip can lose the "onboarding done" state (run cycle-02, TC04/TC05),
+# so first send it to the background (lets it save), then stop and relaunch.
 - pressKey: Home
 - waitForAnimationToEnd:
     timeout: 5000
