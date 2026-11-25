@@ -1,0 +1,14 @@
+# Page: Article. Action: on iPad, Contents is a sidebar that is open by default; hide it. Does nothing on iPhone
+# (only the iPad sidebar labels the button "Hide table of contents").
+appId: ${APP_ID}
+---
+- runFlow:
+    when:
+      visible: "Hide table of contents"
+    commands:
+      - tapOn:
+          id: "Article Table of Contents Button"
+- extendedWaitUntil:
+    notVisible:
+      id: "Article Table of Contents View"
+    timeout: 10000

@@ -1,0 +1,17 @@
+# Page: Article. Assertion: article rendered with title, short description and toolbar. Inputs: TITLE, DESCRIPTION
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible:
+      id: "Article Table of Contents Button"
+    timeout: 30000
+- extendedWaitUntil:
+    visible: ".*${DESCRIPTION}.*"
+    timeout: 30000
+- assertVisible: ${TITLE}
+- assertVisible:
+    id: "Article Languages Button"
+- assertVisible:
+    id: "Article Save Button"
+- assertVisible:
+    id: "Article Find In Page Button"

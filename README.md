@@ -6,7 +6,7 @@ Maestro has no classes, so one YAML file = one page action.
 
 ```
 android/pages/   onboarding, home, search (query, language, assertions), article, nav, language, crash guard   (done)
-ios/pages/       placeholder - added when the iOS guide is done
+ios/pages/       onboarding, launch, tab bar, search, article, contents, saved, crash guard   (done, see ios/README.md)
 ```
 
 ## Conventions

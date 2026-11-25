@@ -1,0 +1,4 @@
+# Page: Article. Assertion: a section heading is NOT on screen yet. Input: SECTION_TITLE (regex-safe)
+appId: ${APP_ID}
+---
+- assertNotVisible: ${SECTION_TITLE}
