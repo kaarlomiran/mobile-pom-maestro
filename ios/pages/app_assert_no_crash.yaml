@@ -1,0 +1,6 @@
+# Any page. Assertion: the app is still in the foreground showing its own UI (a crash drops to the iOS home screen).
+appId: ${APP_ID}
+---
+- assertVisible:
+    id: "(Search Tab Button|Root Tab Saved Button|Article Table of Contents Button|Search Field)"
+- assertNotVisible: ".*(quit unexpectedly|keeps crashing|isn.t responding).*"

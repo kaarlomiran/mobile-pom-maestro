@@ -1,0 +1,7 @@
+# Page: Tab bar. Action: open the Search tab.
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Search Tab Button"
+- assertVisible:
+    id: "Search Field"

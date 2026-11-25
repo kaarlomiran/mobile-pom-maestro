@@ -1,0 +1,16 @@
+# Page: Article. Action: open Contents and jump to a section visible in the list.
+# Inputs: SECTION_ID (item id suffix as a regex, parentheses must be escaped or replaced by .*), SECTION_TITLE (regex)
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Article Table of Contents Button"
+- assertVisible:
+    id: "Article Table of Contents View"
+- assertVisible:
+    id: "Article Table of Contents Item ${SECTION_ID}"
+- tapOn:
+    id: "Article Table of Contents Item ${SECTION_ID}"
+- runFlow: article_contents_hide_sidebar.yaml          # iPhone closes the panel itself; the iPad sidebar stays open
+- extendedWaitUntil:
+    visible: ${SECTION_TITLE}
+    timeout: 10000
