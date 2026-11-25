@@ -1,0 +1,7 @@
+# Page: Article. Action: return to the screen the article was opened from (the W button).
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Article Home Button"
+- assertNotVisible:
+    id: "Article Table of Contents Button"

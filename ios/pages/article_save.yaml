@@ -1,0 +1,8 @@
+# Page: Article. Action: save an unsaved article. Asserts the control state before and after.
+appId: ${APP_ID}
+---
+- assertVisible: "Save for later"
+- tapOn:
+    id: "Article Save Button"
+- assertVisible: "Saved. Activate to unsave."
+- assertNotVisible: "Save for later"

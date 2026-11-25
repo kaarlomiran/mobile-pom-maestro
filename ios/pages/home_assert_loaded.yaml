@@ -1,0 +1,17 @@
+# Page: Home. Assertion: home screen with all five tabs; onboarding is gone.
+appId: ${APP_ID}
+---
+- assertVisible:
+    id: "Root Tab Home Button"
+- assertVisible:
+    id: "Root Tab Places Button"
+- assertVisible:
+    id: "Root Tab Saved Button"
+- assertVisible:
+    id: "Root Tab Activity Button"
+- assertVisible:
+    id: "Search Tab Button"
+- assertVisible: "For You"
+- assertVisible: "Community"
+- assertNotVisible:
+    id: "App Onboarding .*"

@@ -1,0 +1,8 @@
+# Page: Saved. Assertion: this article is listed with its description. Inputs: TITLE, DESCRIPTION
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible:
+      id: "Saved All Articles Row ${TITLE}"
+    timeout: 15000
+- assertVisible: ".*${DESCRIPTION}.*"

@@ -1,0 +1,4 @@
+# Page: Search. Action: submit the query with the keyboard Search key.
+appId: ${APP_ID}
+---
+- pressKey: Enter

@@ -1,0 +1,8 @@
+# Page: Search. Assertion: submitted search shows the empty state and no result rows.
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: "No results found"
+    timeout: 20000
+- assertNotVisible:
+    id: "Search Result .*"
