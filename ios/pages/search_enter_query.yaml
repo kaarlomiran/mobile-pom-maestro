@@ -1,0 +1,9 @@
+# Page: Search. Action: focus the field and type a query. Input: QUERY
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Search Field"
+- inputText: ${QUERY}
+- assertVisible:
+    id: "Search Field"
+    text: ${QUERY}

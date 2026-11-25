@@ -1,0 +1,9 @@
+# Page: Tab bar. Action: open the Saved tab (All articles).
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Root Tab Saved Button"
+- assertVisible:
+    id: "Saved View"
+- assertVisible:
+    id: "Saved Segment Picker"

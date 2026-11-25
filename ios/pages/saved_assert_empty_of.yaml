@@ -1,0 +1,5 @@
+# Page: Saved. Assertion: this article is not in the saved list. Input: TITLE
+appId: ${APP_ID}
+---
+- assertNotVisible:
+    id: "Saved All Articles Row ${TITLE}"

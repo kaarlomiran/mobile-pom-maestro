@@ -1,0 +1,6 @@
+# Page: Search. Action: leave the active search (X next to the field); the tab bar returns.
+appId: ${APP_ID}
+---
+- tapOn: "Close"
+- assertVisible:
+    id: "Root Tab Saved Button"

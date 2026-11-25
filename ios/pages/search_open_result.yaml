@@ -1,0 +1,5 @@
+# Page: Search. Action: open the result with this exact article title. Input: TITLE
+appId: ${APP_ID}
+---
+- tapOn:
+    id: "Search Result ${TITLE}"

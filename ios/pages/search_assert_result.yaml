@@ -1,0 +1,8 @@
+# Page: Search. Assertion: a result with this exact article title is listed. Inputs: TITLE, DESCRIPTION
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible:
+      id: "Search Result ${TITLE}"
+    timeout: 20000
+- assertVisible: ".*${DESCRIPTION}.*"

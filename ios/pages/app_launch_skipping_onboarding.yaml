@@ -1,0 +1,14 @@
+# App. Action: fresh launch that skips onboarding via launch argument -DidShowOnboarding5.3. Ends on Home.
+appId: ${APP_ID}
+---
+- launchApp:
+    clearState: true
+    arguments:
+      "-DidShowOnboarding5.3": "YES"
+      "-WMFSuppressHomeOnboardingForTesting": "YES"
+- extendedWaitUntil:
+    visible:
+      id: "Root Tab Home Button"
+    timeout: 30000
+- assertNotVisible:
+    id: "App Onboarding .*"

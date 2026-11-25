@@ -1,0 +1,12 @@
+# Page: Onboarding. Assertion: first-launch intro page is shown (fresh install).
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible:
+      id: "App Onboarding Intro View"
+    timeout: 30000                                   # cold first launch runs data migration
+- assertVisible: "All the world.s knowledge"         # curly apostrophe in the app
+- assertVisible:
+    id: "App Onboarding Learn More Link"
+- assertVisible:
+    id: "App Onboarding Next Button"
