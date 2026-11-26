@@ -1,0 +1,4 @@
+# Page: Activity tab, first visit. Action: leave the intro with the system Back button.
+appId: ${APP_ID}
+---
+- back

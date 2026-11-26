@@ -1,0 +1,6 @@
+# Page: Search. Assertion: a result with TITLE is listed and this is not the empty state.
+# Input: TITLE (regex of the result title)
+appId: ${APP_ID}
+---
+- assertVisible: ${TITLE}
+- assertNotVisible: "No results"

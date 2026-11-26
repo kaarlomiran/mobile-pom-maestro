@@ -5,7 +5,7 @@ Selectors live **only here**; tests call page actions and never touch raw select
 Maestro has no classes, so one YAML file = one page action.
 
 ```
-android/pages/   onboarding, home, search (query, language, assertions), article, nav, language, crash guard   (done)
+android/pages/   onboarding, home, search (query, language, assertions), article, nav, saved, activity, language, crash guard   (done)
 ios/pages/       onboarding, launch, tab bar, search, article, contents, saved, crash guard   (done, see ios/README.md)
 ```
 
@@ -13,7 +13,11 @@ ios/pages/       onboarding, launch, tab bar, search, article, contents, saved, 
 - One file per page action: `<page>_<action>.yaml`, header `appId: ${APP_ID}`.
 - Inputs are env vars (e.g. `QUERY`); document them at the top of each file.
 - Prefer resource ids / accessibility text over visible text; no coordinates.
-- Page actions end with an `assertVisible` proving they reached the expected state.
+- Page actions end with an `assertVisible` proving they reached the expected state. Checks used by tests live in
+  `<page>_assert_<state>.yaml`; the consuming repo's lint fails a test that contains its own selectors.
+- On slow devices, wait for a screen (`extendedWaitUntil`) before conditional taps; a fixed number of early checks
+  can run before the screen is drawn.
+- Merge changes here before the consuming repo's pull request: its checks read this repo's `main`.
 - Any change here must be validated by running the consuming repo's flows.
 
 ## Consuming

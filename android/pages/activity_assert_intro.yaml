@@ -1,0 +1,6 @@
+# Page: Activity tab, first visit. Assertion: the full-screen intro is shown and covers the nav bar.
+appId: ${APP_ID}
+---
+- assertVisible: "Introducing Activity"
+- assertVisible: "Continue"
+- assertNotVisible: "Saved"

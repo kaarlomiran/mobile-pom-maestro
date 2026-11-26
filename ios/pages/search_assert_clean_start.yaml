@@ -1,0 +1,4 @@
+# Page: Search. Assertion: clean start state, nothing searched before.
+appId: ${APP_ID}
+---
+- assertVisible: "No history to show"

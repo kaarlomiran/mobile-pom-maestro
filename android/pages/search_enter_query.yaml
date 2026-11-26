@@ -1,7 +1,15 @@
 # Page: Search. Action: replace the search box contents with QUERY.
 # Input: QUERY (string)
+# Clears with the X button, which the app shows only when the box has text. Erasing 400 characters one by one
+# took 32-41 s and could exceed Maestro's 120 s device timeout.
 appId: ${APP_ID}
 ---
-- eraseText: 400
+- runFlow:
+    when:
+      visible:
+        id: "org.wikipedia:id/search_close_btn"
+    commands:
+      - tapOn:
+          id: "org.wikipedia:id/search_close_btn"
 - inputText: ${QUERY}
 - waitForAnimationToEnd

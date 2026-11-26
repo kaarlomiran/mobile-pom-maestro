@@ -1,0 +1,6 @@
+# Page: Search. Assertion: neither of these texts is listed (no stale or matching result rows).
+# Input: DESCRIPTION (regex), TITLE (regex)
+appId: ${APP_ID}
+---
+- assertNotVisible: ${DESCRIPTION}
+- assertNotVisible: ${TITLE}

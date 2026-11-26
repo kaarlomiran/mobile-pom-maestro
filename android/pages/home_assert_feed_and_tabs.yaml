@@ -1,0 +1,11 @@
+# Page: Home. Assertion: onboarding is gone, the Explore feed is rendered and every bottom-nav label is shown.
+appId: ${APP_ID}
+---
+- assertNotVisible: "Forward"                     # carousel fully dismissed
+- assertNotVisible: "All the world's knowledge"
+- assertVisible: "Featured article"               # Explore feed content rendered
+- assertVisible: "Home"
+- assertVisible: "Saved"
+- assertVisible: "Search"
+- assertVisible: "Activity"
+- assertVisible: "More"
