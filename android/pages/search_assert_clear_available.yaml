@@ -1,0 +1,5 @@
+# Page: Search. Assertion: the X (clear) button is offered while a query exists.
+appId: ${APP_ID}
+---
+- assertVisible:
+    id: "org.wikipedia:id/search_close_btn"

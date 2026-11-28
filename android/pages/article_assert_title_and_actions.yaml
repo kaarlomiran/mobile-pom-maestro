@@ -1,0 +1,10 @@
+# Page: Article. Assertion: title and toolbar actions are shown and the search screen is gone.
+# Input: TITLE (article title)
+appId: ${APP_ID}
+---
+- assertVisible: ${TITLE}
+- assertVisible: "Contents"
+- assertVisible: "Language"
+- assertNotVisible:                              # left the search screen
+    id: "org.wikipedia:id/search_src_text"
+- assertNotVisible: "No results"

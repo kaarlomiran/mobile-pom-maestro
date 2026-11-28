@@ -1,0 +1,8 @@
+# Page: Search. Assertion: Spanish-language results are listed and the English result is gone.
+# Content is live; update the description words here only.
+appId: ${APP_ID}
+---
+- extendedWaitUntil:
+    visible: ".*(físico|alemán|científico).*"          # Spanish description of the article
+    timeout: 20000
+- assertNotVisible: "German-born theoretical physicist.*"

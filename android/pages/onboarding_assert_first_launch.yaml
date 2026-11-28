@@ -1,0 +1,6 @@
+# Page: Onboarding. Assertion: page 1 of the intro carousel is shown (fresh install).
+appId: ${APP_ID}
+---
+- assertVisible: "All the world's knowledge"
+- assertVisible: "Learn more about Wikipedia"
+- assertNotVisible: "No results"

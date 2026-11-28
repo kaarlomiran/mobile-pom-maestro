@@ -1,0 +1,4 @@
+# Page: Search. Assertion: the empty-result message is not shown yet (start state).
+appId: ${APP_ID}
+---
+- assertNotVisible: "No results found"

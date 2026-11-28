@@ -1,0 +1,5 @@
+# Page: Tab bar. Assertion: no tab button is on screen (onboarding covers the app).
+appId: ${APP_ID}
+---
+- assertNotVisible:
+    id: "Root Tab .* Button"

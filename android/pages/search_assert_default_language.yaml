@@ -1,0 +1,5 @@
+# Page: Search. Assertion: default state, English only (one language).
+appId: ${APP_ID}
+---
+- assertVisible: "EN"
+- assertNotVisible: "ESPAÑOL"

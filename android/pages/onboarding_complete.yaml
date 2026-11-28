@@ -1,15 +1,18 @@
 # Page: Onboarding. Action: get through the intro carousel to the Explore feed.
-# Safe to call when onboarding is not shown (all steps are conditional).
+# Safe to call when onboarding is not shown (the taps are conditional).
+# Waits for the carousel or Home before tapping: on a slow device a fixed number of early checks ran
+# before the first page was drawn and left the app on onboarding.
 appId: ${APP_ID}
 ---
+- extendedWaitUntil:
+    visible: "Forward|Skip|Home"
+    timeout: 60000
 - repeat:
-    times: 4
+    times: 8                # safety cap; the loop ends as soon as "Forward" is gone
+    while:
+      visible: "Forward"
     commands:
-      - runFlow:
-          when:
-            visible: "Forward"
-          commands:
-            - tapOn: "Forward"
+      - tapOn: "Forward"
 - runFlow:
     when:
       visible: "Skip"

@@ -1,0 +1,4 @@
+# Page: Home. Assertion: the Explore feed is on screen.
+appId: ${APP_ID}
+---
+- assertVisible: "Featured article"

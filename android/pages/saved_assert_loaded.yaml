@@ -1,0 +1,5 @@
+# Page: Saved tab. Assertion: the Saved screen replaced the Home feed.
+appId: ${APP_ID}
+---
+- assertVisible: "Saved"
+- assertNotVisible: "Featured article"            # Home content gone
